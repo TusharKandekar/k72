@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Hide scrollbar for Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* Firefox */
+html {
+    scrollbar-width: none;
+}
+
+/* IE / old Edge */
+body {
+    -ms-overflow-style: none;
+}
+
+@font-face {
+  font-family: font1;
+  src: url('./assets/fonts/Lausanne-300.woff2');
+}
+@font-face {
+  font-family: font2;
+  src: url('./assets/fonts/Lausanne-500.woff2');
+}
