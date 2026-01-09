@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Navbar = () => {
     return (
-        <div className='w-full flex items-start justify-between fixed top-0 left-0 z-30'>
+        <div className='w-full flex items-start justify-between fixed top-0 left-0 z-50'>
             <div className='w-[13vw] p-4'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='w-full' viewBox="0 0 120 60">
                     <path fill="#ffffff" fill-rule="evenodd"

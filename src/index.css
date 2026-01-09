@@ -24,3 +24,18 @@ body {
   font-family: font2;
   src: url('./assets/fonts/Lausanne-500.woff2');
 }
+.moveX {
+  display: flex;
+  width: max-content;
+  animation: marquee 12s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0,0,0);
+  }
+  to {
+    transform: translate3d(-50%,0,0);
+  }
+}
