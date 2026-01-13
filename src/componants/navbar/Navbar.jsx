@@ -2,7 +2,10 @@ import React from 'react'
 
 export const Navbar = () => {
     return (
-        <div className='w-full flex items-start justify-between fixed top-0 left-0 z-50'>
+        <div className='w-full flex items-start justify-between fixed top-0 left-0 z-50 relative'>
+            <div className='flex items-center justify-between absolute top-0 right-5 z-50 hover:cursor-pointer'>
+                <img src="/src/assets/icons/cross-thin.png" className='h-[30vh]' alt="" />
+            </div>
             <div className='w-[13vw] p-4'>
                 <svg xmlns="http://www.w3.org/2000/svg" className='w-full' viewBox="0 0 120 60">
                     <path fill="#ffffff" fill-rule="evenodd"

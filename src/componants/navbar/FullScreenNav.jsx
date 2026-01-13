@@ -1,8 +1,57 @@
 import React from 'react'
-
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 export const FullScreenNav = () => {
+    const stairParentRef = React.useRef(null)
+    useGSAP(() => {
+        const tl = gsap.timeline()
+        tl.to(stairParentRef.current, {
+            display: 'block',
+
+        })
+        tl.from('.stair', {
+            // display: 'block',
+            height: 0,
+            stagger: {
+
+                amount: -0.25
+            },
+
+        })
+        tl.to('.stair', {
+
+            y: '100%',
+            stagger: {
+
+                amount: -0.25
+            },
+
+        })
+        tl.to(stairParentRef.current, {
+            display: 'none',
+
+        })
+        tl.to('.stair', {
+            y: '0%',
+        })
+        gsap.from(PageRef.current, { 
+            opacity: 0, 
+            delay: 1,
+            scale : 2,
+            duration: 1 
+        })
+    }, [])
     return (
         <div className='fixed top-0 z-30 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center overflow-x-hidden'>
+            <div ref={stairParentRef} className='w-full h-screen fixed top-0 left-0 z-20'>
+            <div className='w-full h-full flex '>
+                <div className='stair w-1/5 h-full bg-black'></div>
+                <div className='stair w-1/5 h-full bg-black'></div>
+                <div className='stair w-1/5 h-full bg-black'></div>
+                <div className='stair w-1/5 h-full bg-black'></div>
+                <div className='stair w-1/5 h-full bg-black'></div>
+            </div>
+        </div>
             <div className='link group overflow-hidden relative w-full flex items-center justify-center font-[font1] uppercase text-[8vw] leading-[5vw] pt-8 hover:cursor-pointer border-y border-gray-400'>
                 <p>Work</p>
                 <div className="mpvelink group-hover:top-0 transition-all duration-300 absolute overflow-hidden bg-[#d3fd50] text-black top-[-110%] pt-5 w-full">
@@ -25,7 +74,7 @@ export const FullScreenNav = () => {
                     </div>
                 </div>
             </div>
-             <div className='link group overflow-hidden relative w-full flex items-center justify-center font-[font1] uppercase text-[8vw] leading-[5vw] pt-10 hover:cursor-pointer border-t border-gray-400'>
+            <div className='link group overflow-hidden relative w-full flex items-center justify-center font-[font1] uppercase text-[8vw] leading-[5vw] pt-10 hover:cursor-pointer border-t border-gray-400'>
                 <p>Agency</p>
                 <div className="mpvelink group-hover:top-0 transition-all duration-300 absolute overflow-hidden bg-[#d3fd50] text-black top-[-110%] pt-5 w-full">
                     <div className="flex moveX">
@@ -50,7 +99,7 @@ export const FullScreenNav = () => {
             <div className='w-full flex items-center justify-center font-[font1] uppercase text-[8vw] leading-[5vw] pt-10 hover:cursor-pointer border-t border-gray-400'>
                 <p>Contact</p>
             </div>
- <div className='link group overflow-hidden relative w-full flex items-center justify-center font-[font1] uppercase text-[8vw] leading-[5vw] pt-10 hover:cursor-pointer border-y border-gray-400'>
+            <div className='link group overflow-hidden relative w-full flex items-center justify-center font-[font1] uppercase text-[8vw] leading-[5vw] pt-10 hover:cursor-pointer border-y border-gray-400'>
                 <p>Blogs</p>
                 <div className="mpvelink group-hover:top-0 transition-all duration-300 absolute overflow-hidden bg-[#d3fd50] text-black top-[-110%] pt-5 w-full">
                     <div className="flex moveX">
