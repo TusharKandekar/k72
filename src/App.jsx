@@ -5,6 +5,7 @@ import Home from './pages/Home.jsx'
 import Agence from './pages/Agence.jsx'
 import Projects from './pages/Projects.jsx'
 import { Navbar } from './componants/navbar/Navbar.jsx'
+import { FullScreenNav } from './componants/navbar/FullScreenNav.jsx'
 
 
 
@@ -15,6 +16,7 @@ function App() {
       
       <div>
         <Navbar />
+        <FullScreenNav />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/agence' element={<Agence />} />
